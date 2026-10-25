@@ -1,0 +1,340 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 245px;
+  padding: 28px 18px;
+  background: #17243a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  margin: 0 0 38px;
+  font-size: 23px;
+}
+
+.sidebar-label,
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.sidebar-label {
+  color: #9caac0;
+  padding-left: 12px;
+}
+
+.nav-item {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 3px 0;
+  text-align: left;
+  color: #d8e0ee;
+  background: transparent;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background: #30435f;
+  color: white;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 30px;
+  color: #c5cfdf;
+}
+
+.sidebar-bottom small {
+  color: #9caac0;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 0 38px;
+}
+
+.topbar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e8f0;
+  color: #647087;
+  font-size: 14px;
+}
+
+.status {
+  color: #287a54;
+  font-size: 12px;
+}
+
+.welcome {
+  padding: 38px 0 26px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: #5267d8;
+}
+
+.welcome h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -1.2px;
+  margin: 12px 0;
+}
+
+.welcome p:last-child,
+.content-card p {
+  color: #68748a;
+  line-height: 1.7;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 10px 0 24px;
+}
+
+.stat-card,
+.content-card {
+  background: white;
+  border: 1px solid #e4e8f0;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.stat-card span,
+.stat-card small {
+  color: #68748a;
+}
+
+.stat-card h2 {
+  font-size: 32px;
+  margin: 14px 0 8px;
+}
+
+.stat-card small {
+  font-size: 12px;
+}
+
+.content-card {
+  margin-bottom: 20px;
+}
+
+.content-card h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.search-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.search-row input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #dce2ed;
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline-color: #5267d8;
+}
+
+.search-row button,
+.upload-card button {
+  background: #4359d6;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+}
+
+.upload-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.upload-card button {
+  flex-shrink: 0;
+}
+
+footer {
+  color: #8791a3;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    width: 175px;
+    padding: 20px 12px;
+  }
+
+  .main {
+    padding: 0 18px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 125px;
+    padding: 16px 8px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+  }
+
+  .topbar {
+    font-size: 11px;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+}
+
+
+/* KnowledgeAI full-screen layout refinements */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.sidebar {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+.main {
+  width: 0;
+  flex: 1 1 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-left: clamp(18px, 3vw, 42px);
+  padding-right: clamp(18px, 3vw, 42px);
+}
+
+.topbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f5f7fb;
+}
+
+/* Compact backend health indicator in the top bar */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border: 1px solid #cfe8d8;
+  border-radius: 999px;
+  background: #f0fbf4;
+  color: #287a54;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #22a06b;
+  box-shadow: 0 0 0 3px rgba(34, 160, 107, 0.12);
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    position: static;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .main {
+    width: auto;
+    min-width: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .topbar {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .status {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}

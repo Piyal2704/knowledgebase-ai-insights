@@ -1,0 +1,22 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Node.js
+node_modules/
+dist/
+# Local database
+backend/knowledgeai.db
+backend/knowledgeai.db-shm
+backend/knowledgeai.db-wal
+backend/uploads/*
+!backend/uploads/.gitkeep
+# Logs
+*.log
+.vscode/
+.DS_Store
+Thumbs.db
