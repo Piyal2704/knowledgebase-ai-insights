@@ -123,15 +123,17 @@ Interactive API testing is available at http://localhost:8000/docs.
 
 ## Local AI Configuration
 
-KnowledgeAI uses Ollama and the local `llama3.2:1b` model for question answering and insight generation.
+KnowledgeAI uses Ollama with the local `llama3.2:1b` model for question answering and document insight generation.
 
-When running the backend in Docker, the backend must reach Ollama on the host machine. The project configures `OLLAMA_URL` through Docker Compose to use:
+When running with Docker Compose, the backend uses the `OLLAMA_URL` environment variable to connect to Ollama on the host machine:
 
 `http://host.docker.internal:11434/api/generate`
 
-This address allows the container to reach a service running on the host. Ensure the Ollama service is running and the model is available.
+The backend code defaults to `http://127.0.0.1:11434/api/generate` when `OLLAMA_URL` is not set, and adapts the loopback address for Docker access.
 
-KnowledgeAI does not require a paid hosted AI API for its local-model workflow.
+Ensure Ollama is running and the `llama3.2:1b` model is downloaded before using AI features.
+
+KnowledgeAI's local-model workflow does not require a paid hosted AI API.
 
 ## Data Storage and Privacy
 
